@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+
+body {
+  background: linear-gradient(to right, #290047 0%,#000000 15%,#000000 50%,#000000 80%,#290047 100%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+.allPageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.sideBanner {
+  position: absolute;
+  right: -159px;
+  bottom: 1px;
+}
+
+.lobby {
+  position: relative;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40px;
+}
+
+.App-header {
+  background-color: #222;
+  color: white;
+}
+.App-header span {
+  display: inline-block;
+  font-size: 30px;
+  position: relative;
+  bottom: 8px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

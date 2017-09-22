@@ -1,0 +1,30 @@
+footer {
+    color: rgb(169, 128, 255);
+}
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+footer ul li {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding: 0 10px;
+}
+footer ul li:hover {
+    color: rgb(215, 196, 255);
+}
+footer ul li:after {
+    content: '';
+    width: 1px;
+    height: 14px;
+    display: block;
+    background: rgb(169, 128, 255);
+    position: absolute;
+    right: 0;
+    top: 3px;
+}
+footer ul li:last-child:after {
+    display: none;
+}

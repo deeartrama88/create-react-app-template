@@ -1,0 +1,25 @@
+header .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(169, 128, 255);
+}
+header .menu ul li {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding: 0 19px 0 0;
+    font-size: 15px;
+}
+header .menu ul li:hover {
+    color: rgb(215, 196, 255);
+}
+header .menu {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+header {
+    background: url('../images/header_bg.jpg') 0 40px no-repeat;
+}
