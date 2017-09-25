@@ -19,6 +19,10 @@ class Header extends Component {
         }
     }
 
+    facebookAction(){
+        console.log('facebook action');
+    }
+
     render() {
         return (
             <header className="header">
@@ -26,8 +30,8 @@ class Header extends Component {
                     <img src={BestCasinoLogo} alt="Best Casino"/>
                     <ul>
                         <li onClick={ () => this.props.togglePageCoverPopup(true) }>Buy Coins</li>
-                        <li>LeaderBoard</li>
-                        <li onClick={this.goFullScreen }>Events</li>
+                        <li onClick={this.facebookAction}>LeadBoard</li>
+                        <li onClick={this.goFullScreen }>Events(fullScreen mode)</li>
                     </ul>
                 </div>
                 <div className="top_buy">

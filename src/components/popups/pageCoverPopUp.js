@@ -12,9 +12,9 @@ class PageCoverPopUp extends Component {
         return (
             <div style={style} className="allPageCoverPopup">
                 <div className="popupContent">
-                    <div className="closeButton">
+                    <div onClick={ () => this.props.togglePageCoverPopup(false) } className="closeButton">
                         {/*<img src="" alt="close"/>*/}
-                        <span onClick={ () => this.props.togglePageCoverPopup(false) } className="closePopUp">X</span>
+                        <span className="closePopUp">X</span>
                     </div>
                     <h2> All page cover popup</h2>
                 </div>

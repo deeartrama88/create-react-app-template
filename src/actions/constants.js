@@ -1,3 +1,4 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const TOGGLE_PAGE_COVER_POPUP = 'TOGGLE_PAGE_COVER_POPUP';
+export const AUTHORIZED = 'AUTHORIZED';
