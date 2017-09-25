@@ -17,7 +17,7 @@ class SideBanner extends Component {
 
 function mathDispatchToProps(dispatch) {
     return bindActionCreators({
-        // call here magazine popup
+        // call here magazine popups
     }, dispatch);
 }
 

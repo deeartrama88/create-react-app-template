@@ -25,7 +25,7 @@ class Header extends Component {
                 <div className="menu">
                     <img src={BestCasinoLogo} alt="Best Casino"/>
                     <ul>
-                        <li onClick={ () => this.props.togglePageCoverPopup() }>Buy Coins</li>
+                        <li onClick={ () => this.props.togglePageCoverPopup(true) }>Buy Coins</li>
                         <li>LeaderBoard</li>
                         <li onClick={this.goFullScreen }>Events</li>
                     </ul>

@@ -17,7 +17,42 @@ body {
   right: -159px;
   bottom: 1px;
 }
-
+.allPageCoverPopup {
+  color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  background: rgba(0,0,0, 0.7);
+}
+.allPageCoverPopup .popupContent {
+  margin: auto;
+  background: rgba(0, 0, 0, 0.4);
+  border: 5px solid white;
+  border-radius: 5px;
+  padding: 40px;
+  position: relative;
+}
+.popupContent .closeButton {
+  background: red;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 darkred;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.popupContent .closeButton:hover {
+  background: #af1c0e;
+}
+.popupContent .closeButton:active {
+  background: #7e0003;
+  box-shadow: 0 0 0 darkred;
+  top: 13px;
+}
 .lobby {
   position: relative;
 }

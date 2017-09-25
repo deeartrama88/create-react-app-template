@@ -4,7 +4,7 @@ import './assets/css/app.css';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Lobby from './components/lobby/lobby';
-import PageCoverPopUp from './components/popup/pageCoverPopUp';
+import PageCoverPopUp from './components/popups/pageCoverPopUp';
 
 class App extends Component {
     render() {
@@ -16,9 +16,9 @@ class App extends Component {
                     <span>Welcome to React</span>
                 </div>
 
-                <div className="allPageWrapper">
+                <PageCoverPopUp />
 
-                    <PageCoverPopUp />
+                <div className="allPageWrapper">
 
                     <Header />
 
