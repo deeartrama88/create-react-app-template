@@ -5,6 +5,19 @@ import {togglePageCoverPopup} from '../../actions/pageCoverPopup';
 
 
 class PageCoverPopUp extends Component {
+    constructor(props) {
+        super(props);
+
+        this.closePopup = this.closePopup.bind(this);
+    }
+
+    closePopup(){
+        const data = {
+            ...this.props.popupSettings,
+            active: false
+        };
+        this.props.togglePageCoverPopup(data);
+    }
 
     render() {
         let displayPopup = this.props.popupSettings.active ? 'flex' : 'none';
@@ -12,11 +25,12 @@ class PageCoverPopUp extends Component {
         return (
             <div style={style} className="allPageCoverPopup">
                 <div className="popupContent">
-                    <div onClick={ () => this.props.togglePageCoverPopup(false) } className="closeButton">
-                        {/*<img src="" alt="close"/>*/}
+                    <div onClick={this.closePopup} className="closeButton">
                         <span className="closePopUp">X</span>
                     </div>
                     <h2> All page cover popup</h2>
+                    {/* set data via inner html */}
+                    <div className="popupData" dangerouslySetInnerHTML={{__html: this.props.popupSettings.data}}></div>
                 </div>
             </div>
         );

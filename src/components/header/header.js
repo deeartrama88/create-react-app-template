@@ -5,9 +5,15 @@ import {togglePageCoverPopup} from '../../actions/pageCoverPopup';
 
 import '../../assets/css/header.css';
 import BestCasinoLogo from '../../assets/images/best_casino_menu_logo.png';
+import {fetchUserData} from '../../actions/sharedFuncs';
 
 
 class Header extends Component {
+    constructor(props){
+        super(props);
+
+        this.facebookAction = this.facebookAction.bind(this);
+    }
 
     goFullScreen(){
         if(document.body.requestFullScreen) {
@@ -21,6 +27,21 @@ class Header extends Component {
 
     facebookAction(){
         console.log('facebook action');
+        const payload = {
+            active: true,
+            data: 'user info'
+        };
+        this.props.togglePageCoverPopup(payload);
+    }
+
+    promiseTest(){
+        fetchUserData().then(
+            result => {
+                alert("Fulfilled: " + result);
+            },
+            error => {
+                alert("Rejected: " + error);
+            });
     }
 
     render() {
@@ -29,7 +50,7 @@ class Header extends Component {
                 <div className="menu">
                     <img src={BestCasinoLogo} alt="Best Casino"/>
                     <ul>
-                        <li onClick={ () => this.props.togglePageCoverPopup(true) }>Buy Coins</li>
+                        <li onClick={this.promiseTest}>Buy Coins</li>
                         <li onClick={this.facebookAction}>LeadBoard</li>
                         <li onClick={this.goFullScreen }>Events(fullScreen mode)</li>
                     </ul>

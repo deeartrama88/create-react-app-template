@@ -1,13 +1,18 @@
 import {TOGGLE_PAGE_COVER_POPUP} from '../actions/constants';
 
 const initialState = {
-    active: false
+    active: false,
+    data: ''
 };
 
 export default (state = initialState, action) => {
     switch (action.type) {
         case TOGGLE_PAGE_COVER_POPUP:
-            return {active: action.payload };
+            return {
+                ...state,
+                active: action.payload.active,
+                data: action.payload.data
+            };
 
         default:
             return state;

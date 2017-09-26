@@ -1,4 +1,6 @@
-import {AUTHORIZED} from './constants';
+import axios from 'axios';
+import md5 from 'js-md5';
+import {AUTHORIZED, GATE_INIT_URL, GATE_SECRET} from './constants';
 
 export const authorized = (value) => {
     return {
@@ -7,11 +9,19 @@ export const authorized = (value) => {
     }
 };
 
-// export const incrementAsync = (value) => {
-//     return dispatch => {
-//         setTimeout(() => {
-//             // Yay! Can invoke sync or async actions with `dispatch`
-//             dispatch(increment(value));
-//         }, 1000);
-//     };
-// };
+export const getUserGameToken = (credentials) => {
+    return dispatch => {
+        const secretHashString = md5(credentials.userInfo.userID + GATE_SECRET + credentials.userInfo.userID);
+        axios({
+            method: 'get',
+            url: GATE_INIT_URL+'?_token=' + secretHashString + '&cid=' + credentials.userInfo.userID,
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
+        }).then(
+            result => {
+                console.log(result);
+            }
+        );
+    };
+};

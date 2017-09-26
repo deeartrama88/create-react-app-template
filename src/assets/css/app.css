@@ -45,6 +45,10 @@ body {
   top: 10px;
   right: 10px;
 }
+.popupData {
+  text-align: left;
+  font-size: 20px;
+}
 .popupContent .closeButton:hover {
   background: #af1c0e;
 }
@@ -56,7 +60,9 @@ body {
 .lobby {
   position: relative;
 }
-
+.allPageCoverPopup span.green {
+  color: greenyellow;
+}
 .App {
   text-align: center;
 }

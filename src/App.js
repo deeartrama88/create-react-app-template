@@ -7,52 +7,62 @@ import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Lobby from './components/lobby/lobby';
 import PageCoverPopUp from './components/popups/pageCoverPopUp';
-import {authorized} from './actions/user';
+import {authorized, getUserGameToken} from './actions/user';
+import {togglePageCoverPopup} from './actions/pageCoverPopup';
+import {fetchUserData, callFBLogin} from "./actions/sharedFuncs";
 
 class App extends Component {
 
-    componentWillMount(){
+    componentDidMount(){
 
         // at first init - check if user is logged to this app
-        // if no - call FB login popup
+        // if no - call FB login
 
         this.checkStatusFB();
     }
 
-    checkStatusFB() {
-        const __this = this;
+    saveUser(userData) {
 
-        // check status - call or not call login popup
-        // in future I suppose gonna be more option depends from this status
-
-        window.FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                __this.props.authorized('you are connected (logged to this app)');
-                const uid = response.authResponse.userID,
-                        accessToken = response.authResponse;
-                console.log('user id = ' + uid + ' user authResponse = ' + accessToken);
-
-            } else if (response.status === 'not_authorized') {
-                __this.props.authorized('not authorized');
-                __this.callLoginFB();
-            } else {
-                __this.props.authorized('user is not logged in to facebook');
-            }
+        // call popup to show user data
+        this.props.togglePageCoverPopup({
+            ...this.props.popupSettings,
+            active: true,
+            data: userData.userHtmlString
         });
+
+        // save user data to the store
+        this.props.authorized(userData);
+
+        // call first init request to 'Gate'
+
     }
 
-    callLoginFB() {
-        window.FB.login(function(response) {
-            if (response.authResponse) {
-                console.log('Welcome!  Fetching your information.... ');
-                window.FB.api('/me', function(response) {
-                    console.log(response);
-                    console.log('Good to see you, ' + response.name + '.');
-                });
-            } else {
-                console.log('User cancelled login or did not fully authorize.');
+    checkStatusFB() {
+        const __this = this;
+        // check user at first time page loading
+        fetchUserData().then(
+            result => {
+                if (!result) {
+                    callFBLogin().then(
+                        result => {
+                            if (result) {
+                                __this.saveUser(result);
+                            }else{
+                                // here we should ask and wait when user will login (create popup and login button)
+                                alert('please LOGIN to continue - ' + result);
+                            }
+                        }
+                    )
+                }else{
+                    __this.saveUser(result);
+                    // if user logged - go for gameToken
+                    __this.props.getUserGameToken(result);
+                }
+            },
+            error => {
+                alert("Rejected: " + error);
             }
-        });
+        )
     }
 
     render() {
@@ -83,13 +93,16 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
+        popupSettings: state.pageCoverPopup,
         user: state.user
     }
 }
 
 function mathDispatchToProps(dispatch) {
     return bindActionCreators({
-        authorized
+        authorized,
+        getUserGameToken,
+        togglePageCoverPopup
     }, dispatch);
 }
 
