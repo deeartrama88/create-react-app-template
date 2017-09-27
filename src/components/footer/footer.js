@@ -11,12 +11,10 @@ class Footer extends Component {
             <footer className="footer">
                 <ul>
                     <li>Earn Coins</li>
-                    <li>Buy Coins</li>
                     <li>Leader Board</li>
-                    <li>Invite Friends</li>
-                    <li>Fan Page</li>
                     <li>Terms of Service</li>
                     <li>Support</li>
+                    <li>Fan Page</li>
                 </ul>
             </footer>
         );

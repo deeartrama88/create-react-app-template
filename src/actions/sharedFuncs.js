@@ -7,6 +7,7 @@ export const fetchUserData = () => {
 
                 if (response.status === 'connected') {
                     const userData = response;
+                    console.log(userData);
                     window.FB.api(
                         '/me',
                         'GET',
@@ -20,7 +21,6 @@ export const fetchUserData = () => {
                     console.log('not authorized');
                     resolve(false);
                 } else {
-
                     console.log('not logged in to facebook');
                     resolve(false);
                 }

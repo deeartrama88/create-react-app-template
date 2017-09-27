@@ -1,16 +1,22 @@
 footer {
     color: rgb(169, 128, 255);
+    margin-top: 10px;
 }
 footer ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
 footer ul li {
     display: inline-block;
     cursor: pointer;
     position: relative;
     padding: 0 10px;
+    width: 25%;
 }
 footer ul li:hover {
     color: rgb(215, 196, 255);

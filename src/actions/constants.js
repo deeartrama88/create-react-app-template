@@ -5,3 +5,5 @@ export const AUTHORIZED = 'AUTHORIZED';
 export const GATE_INIT_URL = 'http://gate.diwip.com/init';
 export const GATE_SECRET = 'Schrodinger_wAs_rigHt*abouT^Papuas-Schellenberg';
 export const GATE_REQUEST_URL = 'http://gate.diwip.com/request';
+export const UPDATE_TOKEN = 'UPDATE_TOKEN';
+export const SAVE_SPECIAL_OFFERS = 'SAVE_SPECIAL_OFFERS';

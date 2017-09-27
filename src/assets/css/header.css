@@ -23,3 +23,33 @@ header .menu {
 header {
     background: url('../images/header_bg.jpg') 0 40px no-repeat;
 }
+
+.headerBlock {
+    color: black;
+    display: inline-block;
+    background: #d2d2d2;
+    border: 1px dashed #545454;
+    font-size: 15px;
+    padding: 5px 15px;
+}
+.cont.left .headerBlock { margin-right: 10px; }
+.cont.right .headerBlock {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.header .cont {
+    width: 33.33%;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+.cont.left { text-align: left; }
+.cont.right { text-align: right; }
+.cont.center { text-align: center; }
+.flexContainer {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+

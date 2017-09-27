@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import logo from './assets/images/logo.svg';
 import './assets/css/app.css';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Lobby from './components/lobby/lobby';
 import PageCoverPopUp from './components/popups/pageCoverPopUp';
-import {authorized, getUserGameToken} from './actions/user';
+import {authorized, getInitUserGameToken} from './actions/user';
 import {togglePageCoverPopup} from './actions/pageCoverPopup';
 import {fetchUserData, callFBLogin} from "./actions/sharedFuncs";
 
@@ -55,8 +54,8 @@ class App extends Component {
                     )
                 }else{
                     __this.saveUser(result);
-                    // if user logged - go for gameToken
-                    __this.props.getUserGameToken(result);
+                    // if user logged - get init Token
+                    __this.props.getInitUserGameToken(result);
                 }
             },
             error => {
@@ -68,11 +67,6 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <span>{this.props.user.status}</span>
-                </div>
 
                 <PageCoverPopUp />
 
@@ -101,7 +95,7 @@ function mapStateToProps(state) {
 function mathDispatchToProps(dispatch) {
     return bindActionCreators({
         authorized,
-        getUserGameToken,
+        getInitUserGameToken,
         togglePageCoverPopup
     }, dispatch);
 }

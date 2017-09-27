@@ -12,51 +12,56 @@ class Header extends Component {
     constructor(props){
         super(props);
 
-        this.facebookAction = this.facebookAction.bind(this);
+        //this.facebookAction = this.facebookAction.bind(this);
     }
 
-    goFullScreen(){
-        if(document.body.requestFullScreen) {
-            document.body.requestFullScreen();
-        } else if(document.body.mozRequestFullScreen) {
-            document.body.mozRequestFullScreen();
-        } else if(document.body.webkitRequestFullScreen) {
-            document.body.webkitRequestFullScreen();
-        }
-    }
+    // goFullScreen(){
+    //     const element = document.querySelector('#testID');
+    //     console.log(element);
+    //     if(element.requestFullScreen) {
+    //         element.requestFullScreen();
+    //     } else if(element.mozRequestFullScreen) {
+    //         element.mozRequestFullScreen();
+    //     } else if(element.webkitRequestFullScreen) {
+    //         element.webkitRequestFullScreen();
+    //     }
+    // }
 
-    facebookAction(){
-        console.log('facebook action');
-        const payload = {
-            active: true,
-            data: 'user info'
-        };
-        this.props.togglePageCoverPopup(payload);
-    }
+    // facebookAction(){
+    //     console.log('facebook action');
+    //     const payload = {
+    //         active: true,
+    //         data: 'user info'
+    //     };
+    //     this.props.togglePageCoverPopup(payload);
+    // }
 
-    promiseTest(){
-        fetchUserData().then(
-            result => {
-                alert("Fulfilled: " + result);
-            },
-            error => {
-                alert("Rejected: " + error);
-            });
-    }
+    // promiseTest(){
+    //     fetchUserData().then(
+    //         result => {
+    //             alert("Fulfilled: " + result);
+    //         },
+    //         error => {
+    //             alert("Rejected: " + error);
+    //         });
+    // }
 
     render() {
         return (
             <header className="header">
-                <div className="menu">
-                    <img src={BestCasinoLogo} alt="Best Casino"/>
-                    <ul>
-                        <li onClick={this.promiseTest}>Buy Coins</li>
-                        <li onClick={this.facebookAction}>LeadBoard</li>
-                        <li onClick={this.goFullScreen }>Events(fullScreen mode)</li>
-                    </ul>
-                </div>
-                <div className="top_buy">
-
+                <div className="flexContainer">
+                    <div className="cont left">
+                        <div className="headerBlock fbLike">like on FB</div>
+                        <div className="headerBlock downloadMobileApp">Download</div>
+                    </div>
+                    <div className="cont center">
+                        <img src={BestCasinoLogo} alt="Best Casino"/>
+                    </div>
+                    <div className="cont right">
+                        <div className="headerBlock quickBuy">Quick Buy</div>
+                        <div className="headerBlock oldLook">Old look</div>
+                        <div className="headerBlock hd">HD</div>
+                    </div>
                 </div>
             </header>
         );
