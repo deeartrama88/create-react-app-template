@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import GamesAnnouncement from './gameAnnouncement';
-import Slider from './slider';
+import Slider from './slider/slider';
 
 
 class GamesSlide extends Component {

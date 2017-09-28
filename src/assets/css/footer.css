@@ -1,6 +1,7 @@
 footer {
     color: rgb(169, 128, 255);
     margin-top: 10px;
+    text-align: center;
 }
 footer ul {
     list-style: none;

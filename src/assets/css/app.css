@@ -49,9 +49,7 @@ body {
   text-align: left;
   font-size: 20px;
 }
-.popupContent .closeButton:hover {
-  background: #af1c0e;
-}
+.popupContent .closeButton:hover { background: #af1c0e; }
 .popupContent .closeButton:active {
   background: #7e0003;
   box-shadow: 0 0 0 darkred;
@@ -60,39 +58,204 @@ body {
 .lobby {
   position: relative;
   width: 100%;
-  border: 2px dashed #9e9e9e;
+  border: 1px solid #9e9e9e;
   background: rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
 }
-.allPageCoverPopup span.green {
-  color: greenyellow;
-}
+.allPageCoverPopup span.green { color: greenyellow; }
 .userInfoBar, .gamesSlider, .moreGamesBottom {
   color: white;
   background: #4e4e4e;
-  border-bottom: 2px dashed #9e9e9e;
   text-align: center;
 }
+.gamesSlider { padding: 10px; }
 .moreGamesBottom { border-bottom: none; }
 
 .moreGamesBottom .cont,
 .userInfoBar .cont {
   width: 33.33%;
-  padding: 10px;
-  box-sizing: border-box;
-
-}
-
-.moreGamesBottom .cont.center, .userInfoBar .cont.center {
-  border-right: 2px dashed grey;
-  border-left: 2px dashed grey;
   box-sizing: border-box;
 }
 
 .gameAnnouncement {
-  padding: 30px 0;
-  border-bottom: 2px dashed grey;
+  padding: 20px 0;
+  border: 2px solid grey;
+  margin: 5px;
 }
-.slider {
+.slider { margin: 5px; }
+.slideItem {
+  text-align: center;
+  width: 23%;
+  border: 1px solid grey;
   padding: 100px 0;
 }
+.lobbyBottomGameItem {
+  display: inline-block;
+  padding: 15px 5px;
+  background: #4e4e4e;
+  border: 1px solid grey;
+}
+.slideArrow {
+  width: 6%;
+  border: 1px solid grey;
+  align-self: center;
+}
+.userXP {
+  position: relative;
+  width: 200px;
+  padding: 3px;
+  background: #002f84;
+}
+.bankRoll .amount {
+  font-size: 19px;
+  text-align: right;
+}
+.userXPProgress {
+  width: 50%;
+  height: 100%;
+  background: cornflowerblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.userXPProgressPercents {
+  position: relative;
+  left: 44%;
+}
+.profileLevel {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  font-size: 14px;
+}
+.userProfile { position: relative; }
+.userBarUSAicon {
+  margin-left: 5px;
+  width: 20px;
+  vertical-align: top;
+}
+.luckyCoinsIcon {
+  width: 22px;
+  float: right;
+}
+.userLuckyCoinAmount {
+  font-size: 19px;
+  display: inline-block;
+}
+.userBarLuckyCoins {
+  min-width: 70px;
+  align-self: center;
+  background: grey;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.userInfoBar .wrap {
+  align-self: center;
+  background: #777777;
+}
+.bankRoll { padding: 2px; }
+.userInfoBar .cont.center {
+  width:19%;
+  display: flex;
+  flex-flow: wrap row;
+}
+.userInfoBar .cont { width:40%; }
+button.userBarMagazineButton {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 23px;
+  display: inline-block;
+  margin: auto;
+}
+button.userBarMagazineButton:hover { background: #cacaca; }
+button.userBarMagazineButton:active { background: #b5b5b5; }
+
+.userInfoBar .cont.right {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.userBarHourlyBonus {
+  border: none;
+  align-self: center;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  background: gold;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}
+.userBarHourlyBonus:hover { background: #ffe766; }
+.userBarHourlyBonus:active { background: #e4c41a; }
+
+.userBarKittyBank img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: -10%;
+  top: 2px;
+}
+.userBarKittyBank .amount {
+  display: inline-block;
+  font-size: 20px;
+  align-self: center;
+  color: gold;
+  padding: 10px 10px 10px 30px;
+  border-radius: 25px;
+  background: grey;
+}
+.userBarKittyBank .wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background: none;
+  position: relative;
+}
+
+/*
+
+  ANIMATIONS
+
+*/
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+/*
+
+  ANIMATIONS
+
+*/

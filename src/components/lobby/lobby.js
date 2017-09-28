@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 // import LobbyImg from '../../assets/images/lobby.png';
 import UserInfoBar from './userInfoBar/userInfoBar';
 import GamesSlide from './gameSlide/main';
-import MoreGamesBottom from './moreGameBottom/moreGameBottom';
+import LobbyBottomItems from './lobbyBottomItems/lobbyBottomItems';
 // import sideBanner from '../../assets/images/sideBanner.png';
 
 
@@ -28,7 +28,7 @@ class Lobby extends Component {
 
                 <GamesSlide />
 
-                <MoreGamesBottom />
+                <LobbyBottomItems />
 
                 {/*<img id='lobby' src={LobbyImg} alt="lobby"/>*/}
 

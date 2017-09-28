@@ -4,10 +4,21 @@ import {
     SAVE_SPECIAL_OFFERS
 } from '../actions/constants';
 
-export default (state = {status: 'not authorized'}, action) => {
+const initialState = {
+  status: 'not authorized',
+  userInfo: {
+      picture: '',
+      progress: 30,
+      level: 4
+  }
+};
+
+export default (state = initialState, action) => {
     switch (action.type) {
         case AUTHORIZED:
-            return {...action.payload};
+            const initObj = Object.assign({}, state, action.payload);
+            initObj.userInfo = Object.assign({}, state.userInfo, action.payload.userInfo);
+            return initObj;
 
         case UPDATE_TOKEN:
             const stateWithUpdatedToken = {...state};

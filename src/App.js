@@ -23,11 +23,11 @@ class App extends Component {
     saveUser(userData) {
 
         // call popup to show user data
-        this.props.togglePageCoverPopup({
-            ...this.props.popupSettings,
-            active: true,
-            data: userData.userHtmlString
-        });
+        // this.props.togglePageCoverPopup({
+        //     ...this.props.popupSettings,
+        //     active: true,
+        //     data: userData.userHtmlString
+        // });
 
         // save user data to the store
         this.props.authorized(userData);
