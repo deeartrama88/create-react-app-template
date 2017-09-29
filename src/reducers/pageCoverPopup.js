@@ -2,7 +2,8 @@ import {TOGGLE_PAGE_COVER_POPUP} from '../actions/constants';
 
 const initialState = {
     active: false,
-    data: ''
+    data: '',
+    content: false
 };
 
 export default (state = initialState, action) => {

@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {togglePageCoverPopup} from '../../actions/pageCoverPopup';
-
+import QuickBuy from './quickBuyItem';
 import '../../assets/css/header.css';
 import BestCasinoLogo from '../../assets/images/best_casino_menu_logo.png';
-import {fetchUserData} from '../../actions/sharedFuncs';
+// import {fetchUserData} from '../../actions/sharedFuncs';
 
 
 class Header extends Component {
@@ -58,7 +58,7 @@ class Header extends Component {
                         <img src={BestCasinoLogo} alt="Best Casino"/>
                     </div>
                     <div className="cont right">
-                        <div className="headerBlock quickBuy">Quick Buy</div>
+                        <QuickBuy/>
                         <div className="headerBlock oldLook">Old look</div>
                         <div className="headerBlock hd">HD</div>
                     </div>

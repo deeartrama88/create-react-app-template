@@ -20,10 +20,6 @@ header .menu {
     align-items: center;
 }
 
-header {
-    background: url('../images/header_bg.jpg') 0 40px no-repeat;
-}
-
 .headerBlock {
     color: black;
     display: inline-block;
@@ -38,13 +34,15 @@ header {
     margin-left: 10px;
 }
 .header .cont {
-    width: 33.33%;
+    width: 40%;
     align-self: flex-end;
     margin-bottom: 10px;
 }
 .cont.left { text-align: left; }
 .cont.right { text-align: right; }
-.cont.center { text-align: center; }
+.cont.center {
+    width: 20%;
+    text-align: center; }
 .flexContainer {
     display: flex;
     width: 100%;

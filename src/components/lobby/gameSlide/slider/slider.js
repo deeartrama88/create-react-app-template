@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import SlideItem from './slideItem';
 
-
 class Slider extends Component {
 
     render() {
@@ -16,6 +15,7 @@ class Slider extends Component {
                     <SlideItem item={ {name: 'Featured Games'} }/>
                     <div className="slideArrow"> > </div>
                 </div>
+
             </div>
         );
     }

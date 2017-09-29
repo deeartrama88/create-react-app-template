@@ -221,41 +221,68 @@ button.userBarMagazineButton:active { background: #b5b5b5; }
   background: none;
   position: relative;
 }
-
-/*
-
-  ANIMATIONS
-
-*/
-
-.example-enter {
-  opacity: 0.01;
+.userBarMenu {
+  position: relative;
+}
+.userBarMenu .menu_ {
+  position: absolute;
+  top: 110%;
+  right: 58%;
+  transform: translateX(50%);
+  text-align: center;
+}
+.userBarMenu .menu_ ul {
+  margin: 0;
+  padding: 0;
+}
+.userBarMenu .menu_ ul li {
+  padding: 10px;
+  color: #000;
+  border-bottom: 1px solid;
+  cursor: pointer;
+  background: #add8e6;
+}
+.userBarMenu .menu_ ul li:active {
+  background: #00a9d0;
+}
+.userBarMenu .menu_ ul li:hover {
+  background: #7db8cc;
+}
+.userBarMenu .menu_ ul li:last-child {
+  border-bottom: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.userBarMenu .menu_ ul li:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.openUserBarMenu {
+  background: lightgrey;
+  outline: none;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.openUserBarMenu:hover {
+  background: #adadad;
+}
+.openUserBarMenu:active {
+  background: #989898;
+}
+.quickBuy.headerBlock {
+  padding: 0;
+  border: none;
+  background: none;
+  width: 175px;
+  font-size: 11px;
+  font-weight: bold;
+  vertical-align: bottom;
 }
 
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
+.Select {
+  text-align: left;
 }
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-.example-appear {
-  opacity: 0.01;
-}
-
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity .5s ease-in;
-}
-
-/*
-
-  ANIMATIONS
-
-*/

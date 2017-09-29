@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {togglePageCoverPopup} from '../../actions/pageCoverPopup';
+import MainShop from '../mainShop';
 
 
 class PageCoverPopUp extends Component {
@@ -20,6 +21,7 @@ class PageCoverPopUp extends Component {
     }
 
     render() {
+        // const content
         let displayPopup = this.props.popupSettings.active ? 'flex' : 'none';
         const style = {display: displayPopup};
         return (

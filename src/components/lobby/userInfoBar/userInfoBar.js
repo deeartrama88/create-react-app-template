@@ -8,26 +8,33 @@ import {
     UserXPBar,
     BankRoll
 } from './userBarElements/userBarElements';
-import { CSSTransitionGroup } from 'react-transition-group'
+// import {CSSTransitionGroup} from 'react-transition-group'
 import CoinUSAUrl from '../../../assets/images/coin-us-dollar-icon.png';
 import KittyIconImg from '../../../assets/images/Piggy-Bank-golden.ico';
 
+const style = {
+    transition: 'all .3s ease-out',
+    overflow: 'hidden',
+    margin: 0,
+    padding: 0
+};
 
 class UserInfoBar extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {
-          activeMenu: false
-        };
+        this.state = { height: 0 };
 
         this.menuToggle = this.menuToggle.bind(this);
     }
 
-    menuToggle(){
-        this.setState({activeMenu: !this.state.activeMenu});
-        console.log(this.state.activeMenu);
+    menuToggle() {
+        this.setState({height: this.state.height === 0 ? 118 : 0});
+    }
+
+    openShop() {
+
     }
 
     render() {
@@ -56,11 +63,11 @@ class UserInfoBar extends Component {
                     </div>
 
                     <div className="cont center">
-                        <button className="userBarMagazineButton"> More Coins </button>
+                        <button className="userBarMagazineButton" onClick={this.openShop}> More Coins</button>
                     </div>
 
                     <div className="cont right">
-                        <button className="userBarHourlyBonus"> hourly bonus </button>
+                        <button className="userBarHourlyBonus"> hourly bonus</button>
 
                         <UserBarKittyBank
                             kittyBankImg={KittyIconImg}
@@ -68,6 +75,13 @@ class UserInfoBar extends Component {
 
                         <div className="userBarMenu">
                             <button onClick={this.menuToggle} className="openUserBarMenu">menu</button>
+                            <div className="menu_" style={ {...style, height: this.state.height} }>
+                                <ul>
+                                    <li>lobby</li>
+                                    <li>settings</li>
+                                    <li>store</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,9 +97,7 @@ function mapStateToProps(state) {
 }
 
 function mathDispatchToProps(dispatch) {
-    return bindActionCreators({
-
-    }, dispatch);
+    return bindActionCreators({}, dispatch);
 }
 
 export default connect(mapStateToProps, mathDispatchToProps)(UserInfoBar);
